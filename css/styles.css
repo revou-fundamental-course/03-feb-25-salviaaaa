@@ -1,98 +1,185 @@
+/* Reset dasar */
+* {
+    margin: 0; /* Menghapus margin default dari semua elemen */
+    padding: 0; /* Menghapus padding default dari semua elemen */
+    box-sizing: border-box; /* Mengatur box-sizing agar padding dan border termasuk dalam lebar dan tinggi elemen */
+}
+
+/* Styling dasar */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif; /* Mengatur font untuk seluruh halaman */
+    background-color: #f5f5f5; /* Mengatur warna latar belakang halaman */
+    line-height: 1.6; /* Mengatur tinggi baris untuk teks */
+    color: #333; /* Mengatur warna teks */
 }
 
-.card {
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+/* Container utama */
+.container {
+    max-width: 1200px; /* Mengatur lebar maksimum kontainer */
+    margin: 2rem auto; /* Mengatur margin atas dan bawah, serta mengatur kontainer agar berada di tengah */
+    padding: 0 1rem; /* Mengatur padding kiri dan kanan */
 }
 
-.thermometer {
-    position: relative;
-    width: 40px;
-    height: 200px;
-    margin: 20px auto;
+/* Card konverter */
+.converter-card {
+    background: white; /* Mengatur warna latar belakang kartu konverter */
+    border-radius: 1rem; /* Mengatur sudut kartu agar melengkung */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Menambahkan bayangan pada kartu */
+    padding: 2rem; /* Mengatur padding di dalam kartu */
 }
 
-.thermometer-tube {
-    position: absolute;
-    width: 20px;
-    height: 160px;
-    background: #fff;
-    border: 2px solid #ccc;
-    border-radius: 10px 10px 0 0;
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
+/* Header */
+h1 {
+    text-align: center; /* Mengatur teks judul agar berada di tengah */
+    margin-bottom: 2rem; /* Mengatur margin bawah untuk memberi jarak dari elemen di bawahnya */
+    color: #2c3e50; /* Mengatur warna teks judul */
 }
 
-.mercury {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(to top, #ff4444, #ff6666);
-    transition: height 0.5s ease-in-out, background 0.5s ease-in-out;
+/* Layout konten */
+.converter-content {
+    display: grid; /* Mengatur konten menggunakan grid */
+    grid-template-columns: 1fr 1fr; /* Membagi konten menjadi dua kolom yang sama lebar */
+    gap: 2rem; /* Mengatur jarak antara kolom */
 }
 
-.thermometer-bulb {
-    position: absolute;
-    bottom: 0;
-    width: 40px;
-    height: 40px;
-    background: #ff4444;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    left: 50%;
-    transform: translateX(-50%);
+/* Styling form */
+.input-group {
+    margin-bottom: 1.5rem; /* Mengatur margin bawah untuk memberi jarak antar grup input */
 }
 
-#result {
-    font-size: 1.2em;
-    font-weight: 500;
+.input-group label {
+    display: block; /* Mengatur label agar tampil sebagai blok */
+    margin-bottom: 0.5rem; /* Mengatur margin bawah untuk memberi jarak dari input */
+    font-weight: 500; /* Mengatur ketebalan font label */
 }
 
-#explanation {
-    font-size: 0.9em;
-    color: #666;
+input[type="number"] {
+    width: 100%; /* Mengatur lebar input agar memenuhi lebar kontainer */
+    padding: 0.8rem; /* Mengatur padding di dalam input */
+    border: 2px solid #e0e0e0; /* Mengatur border input */
+    border-radius: 0.5rem; /* Mengatur sudut input agar melengkung */
+    font-family: inherit; /* Mengatur font input agar mengikuti font dari elemen induk */
 }
 
-.btn-primary {
-    background-color: #4a90e2;
-    border: none;
-    padding: 10px 25px;
-    font-weight: 500;
+/* Unit selection */
+.unit-selection {
+    border: none; /* Menghapus border dari elemen unit selection */
+    margin-bottom: 1.5rem; /* Mengatur margin bawah untuk memberi jarak dari elemen di bawahnya */
 }
 
-.btn-primary:hover {
-    background-color: #357abd;
+.unit-selection legend {
+    font-weight: 500; /* Mengatur ketebalan font untuk legend */
+    margin-bottom: 0.5rem; /* Mengatur margin bawah untuk memberi jarak dari elemen di bawahnya */
 }
 
+.radio-group {
+    margin: 0.5rem 0; /* Mengatur margin atas dan bawah untuk grup radio */
+}
+
+/* Button styling */
+button {
+    background-color: #4a90e2; /* Mengatur warna latar belakang tombol */
+    color: white; /* Mengatur warna teks tombol */
+    border: none; /* Menghapus border dari tombol */
+    padding: 0.8rem 2rem; /* Mengatur padding di dalam tombol */
+    border-radius: 0.5rem; /* Mengatur sudut tombol agar melengkung */
+    cursor: pointer; /* Mengubah kursor saat hover di atas tombol */
+    font-weight: 500; /* Mengatur ketebalan font tombol */
+    transition: background-color 0.3s; /* Menambahkan efek transisi saat warna latar belakang berubah */
+}
+
+button:hover {
+    background-color: #357abd; /* Mengubah warna latar belakang tombol saat hover */
+}
+
+/* Formula explanation styling */
 .formula-explanation {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 2rem; /* Mengatur margin atas untuk memberi jarak dari elemen di atasnya */
+    padding: 1rem; /* Mengatur padding di dalam elemen penjelasan formula */
+    background-color: #f8f9fa; /* Mengatur warna latar belakang elemen penjelasan */
+    border-radius: 0.5rem; /* Mengatur sudut elemen penjelasan agar melengkung */
 }
 
 .formula-box {
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px 0;
+    background: white; /* Mengatur warna latar belakang kotak formula */
+    padding: 1rem; /* Mengatur padding di dalam kotak formula */
+    margin: 0.5rem 0; /* Mengatur margin atas dan bawah untuk memberi jarak antar kotak */
+    border-radius: 0.5rem; /* Mengatur sudut kotak formula agar melengkung */
+    border: 1px solid #e0e0e0; /* Mengatur border kotak formula */
 }
 
-.formula-box p {
-    margin: 5px 0;
+/* Thermometer styling */
+.thermometer {
+    position: relative; /* Mengatur posisi elemen termometer relatif terhadap elemen induknya */
+    width: 40px; /* Mengatur lebar termometer */
+    height: 200px; /* Mengatur tinggi termometer */
+    margin: 2rem auto; /* Mengatur margin atas dan bawah, serta mengatur termometer agar berada di tengah */
 }
 
-#conversion-steps {
-    text-align: left;
-    background-color: #f8f9fa;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 15px;
-    font-size: 0.9em;
+.thermometer-tube {
+    position: absolute; /* Mengatur posisi tabung termometer secara absolut */
+    width: 20px; /* Mengatur lebar tabung termometer */
+    height: 160px; /* Mengatur tinggi tabung termometer */
+    background: white; /* Mengatur warna latar belakang tabung termometer */
+    border: 2px solid #ccc; /* Mengatur border tabung termometer */
+    border-radius: 10px 10px 0 0; /* Mengatur sudut tabung termometer agar melengkung di bagian atas */
+    left: 50%; /* Mengatur posisi tabung agar berada di tengah secara horizontal */
+    transform: translateX(-50%); /* Menggeser tabung ke kiri setengah lebar tabung untuk memusatkan */
+    overflow: hidden; /* Mengatur agar konten yang melampaui batas tabung tidak terlihat */
+}
+
+.mercury {
+    position: absolute; /* Mengatur posisi merkuri secara absolut */
+    bottom: 0; /* Mengatur posisi merkuri agar berada di bagian bawah tabung */
+    width: 100%; /* Mengatur lebar merkuri agar memenuhi lebar tabung */
+    height: 0%; /* Mengatur tinggi merkuri awalnya menjadi 0% */
+    background: #ff4444; /* Mengatur warna latar belakang merkuri */
+    transition: all 0.5s ease-in-out; /* Menambahkan efek transisi untuk semua perubahan pada merkuri */
+}
+
+.thermometer-bulb {
+    position: absolute; /* Mengatur posisi bola termometer secara absolut */
+    bottom: 0; /* Mengatur posisi bola agar berada di bagian bawah tabung */
+    width: 40px; /* Mengatur lebar bola termometer */
+    height: 40px; /* Mengatur tinggi bola termometer */
+    background: #ff4444; /* Mengatur warna latar belakang bola termometer */
+    border: 2px solid #ccc; /* Mengatur border bola termometer */
+    border-radius: 50%; /* Mengatur bola agar berbentuk bulat */
+    left: 50%; /* Mengatur posisi bola agar berada di tengah secara horizontal */
+    transform: translateX(-50%); /* Menggeser bola ke kiri setengah lebar bola untuk memusatkan */
+}
+
+/* Result area styling */
+.result-section {
+    text-align: center; /* Mengatur teks hasil agar berada di tengah */
+}
+
+.result {
+    font-size: 1.2rem; /* Mengatur ukuran font untuk hasil */
+    font-weight: 500; /* Mengatur ketebalan font untuk hasil */
+    margin: 1rem 0; /* Mengatur margin atas dan bawah untuk memberi jarak dari elemen di atas dan bawah */
+}
+
+.explanation {
+    color: #666; /* Mengatur warna teks penjelasan */
+    margin: 0.5rem 0; /* Mengatur margin atas dan bawah untuk memberi jarak dari elemen di atas dan bawah */
+}
+
+.steps {
+    text-align: left; /* Mengatur teks langkah-langkah agar rata kiri */
+    background-color: #f8f9fa; /* Mengatur warna latar belakang untuk langkah-langkah */
+    padding: 1rem; /* Mengatur padding di dalam langkah-langkah */
+    border-radius: 0.5rem; /* Mengatur sudut langkah-langkah agar melengkung */
+    margin-top: 1rem; /* Mengatur margin atas untuk memberi jarak dari elemen di atasnya */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .converter-content {
+        grid-template-columns: 1fr; /* Mengatur konten menjadi satu kolom pada layar kecil */
+    }
+    
+    .converter-card {
+        padding: 1rem; /* Mengatur padding dalam kartu konverter pada layar kecil */
+    }
 }
